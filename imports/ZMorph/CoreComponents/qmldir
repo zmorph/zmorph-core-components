@@ -5,7 +5,10 @@ Action                          1.0 Action10.qml
 ActionGroup                     1.0 ActionGroup10.qml
 ApplicationWindow               1.0 ApplicationWindow10.qml
 BusyIndicator                   1.0 BusyIndicator10.qml
+
 Button                          1.0 Button10.qml
+Button                          1.1 Button11.qml
+
 ButtonGroup                     1.0 ButtonGroup10.qml
 CheckBox                        1.0 CheckBox10.qml
 CheckDelegate                   1.0 CheckDelegate10.qml
@@ -50,10 +53,11 @@ Switch                          1.0 Switch10.qml
 SwitchDelegate                  1.0 SwitchDelegate10.qml
 TabBar                          1.0 TabBar10.qml
 TabButton                       1.0 TabButton10.qml
+Text                            1.0 Text10.qml
 TextArea                        1.0 TextArea10.qml
 
-# TODO: Change name of TextField to avoid conflict with one from Qt!
-#TextField                       1.0 TextField10.qml
+TextField                       1.0 TextField10.qml
+TextField                       1.1 TextField11.qml
 
 ToolBar                         1.0 ToolBar10.qml
 ToolButton                      1.0 ToolButton10.qml

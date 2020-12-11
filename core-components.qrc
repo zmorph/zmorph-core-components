@@ -55,5 +55,8 @@
         <file>imports/ZMorph/CoreComponents/ToolSeparator10.qml</file>
         <file>imports/ZMorph/CoreComponents/ToolTip10.qml</file>
         <file>imports/ZMorph/CoreComponents/Tumbler10.qml</file>
+        <file>imports/ZMorph/CoreComponents/Button11.qml</file>
+        <file>imports/ZMorph/CoreComponents/Text10.qml</file>
+        <file>imports/ZMorph/CoreComponents/TextField11.qml</file>
     </qresource>
 </RCC>
