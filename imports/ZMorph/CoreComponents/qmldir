@@ -12,7 +12,10 @@ Button                          1.1 Button11.qml
 ButtonGroup                     1.0 ButtonGroup10.qml
 CheckBox                        1.0 CheckBox10.qml
 CheckDelegate                   1.0 CheckDelegate10.qml
+
 ComboBox                        1.0 ComboBox10.qml
+ComboBox                        1.1 ComboBox11.qml
+
 Container                       1.0 Container10.qml
 Control                         1.0 Control10.qml
 DelayButton                     1.0 DelayButton10.qml
