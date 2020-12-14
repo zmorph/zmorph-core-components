@@ -39,6 +39,8 @@ import QtQuick.Controls 2.12
 import QtQuick.Controls.impl 2.12
 import QtQuick.Templates 2.12 as T
 
+import ZMorph.UiElements 1.0
+
 T.TextField {
     id: control
 
@@ -51,7 +53,11 @@ T.TextField {
     padding: 6
     leftPadding: padding + 4
 
-    color: control.palette.text
+    property color placeholderColor: Style.colorForeground
+    property color backgroundColor: Style.colorPrimary
+    property color backgroundBorderColor: Style.colorAccent
+
+    color: Style.colorForeground
     selectionColor: control.palette.highlight
     selectedTextColor: control.palette.highlightedText
     placeholderTextColor: Color.transparent(control.color, 0.5)
@@ -71,7 +77,7 @@ T.TextField {
 
         text: control.placeholderText
         font: control.font
-        color: control.placeholderTextColor
+        color: control.placeholderColor
         verticalAlignment: control.verticalAlignment
         visible: !control.length && !control.preeditText && (!control.activeFocus || control.horizontalAlignment !== Qt.AlignHCenter)
         elide: Text.ElideRight
@@ -81,8 +87,14 @@ T.TextField {
     background: Rectangle {
         implicitWidth: 200
         implicitHeight: 40
-        border.width: control.activeFocus ? 2 : 1
-        color: control.palette.base
-        border.color: control.activeFocus ? control.palette.highlight : control.palette.mid
+        border.width: 1
+        color: control.backgroundColor
+        border.color: control.activeFocus ? control.backgroundBorderColor : control.backgroundColor
+
+        Behavior on border.color {
+            ColorAnimation {
+                duration: 70
+            }
+        }
     }
 }
