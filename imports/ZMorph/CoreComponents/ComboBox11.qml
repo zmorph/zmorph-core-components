@@ -56,6 +56,7 @@ T.ComboBox {
 
     property color color: Style.colorPrimary
     property color textColor: Style.colorForeground
+    property var textLeftMargin: 12
     property color dropDownListColor: Style.colorPrimary
 
     delegate: ItemDelegate {
@@ -78,7 +79,7 @@ T.ComboBox {
     }
 
     contentItem: Text {
-        leftPadding: 12
+        leftPadding: control.textLeftMargin
         rightPadding: control.indicator.width + control.spacing
 
         text: control.displayText
