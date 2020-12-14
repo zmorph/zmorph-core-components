@@ -55,6 +55,7 @@ T.Button {
 
     property color color: Style.colorAccent
     property color textColor: Style.colorBackground
+    property alias fontPixelSize: textItem.font.pixelSize
 
     states: [
         State {
