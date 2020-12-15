@@ -57,6 +57,8 @@ T.TextField {
     property color backgroundColor: Style.colorPrimary
     property color backgroundBorderColor: Style.colorAccent
 
+    property bool isGcodeInput: false
+
     color: Style.colorForeground
     selectionColor: control.palette.highlight
     selectedTextColor: control.palette.highlightedText
