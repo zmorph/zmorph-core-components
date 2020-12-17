@@ -10,7 +10,10 @@ Button                          1.0 Button10.qml
 Button                          1.1 Button11.qml
 
 ButtonGroup                     1.0 ButtonGroup10.qml
+
 CheckBox                        1.0 CheckBox10.qml
+CheckBox                        1.1 CheckBox11.qml
+
 CheckDelegate                   1.0 CheckDelegate10.qml
 
 ComboBox                        1.0 ComboBox10.qml
@@ -55,7 +58,10 @@ SwipeView                       1.0 SwipeView10.qml
 Switch                          1.0 Switch10.qml
 SwitchDelegate                  1.0 SwitchDelegate10.qml
 TabBar                          1.0 TabBar10.qml
+
 TabButton                       1.0 TabButton10.qml
+TabButton                       1.1 TabButton11.qml
+
 Text                            1.0 Text10.qml
 TextArea                        1.0 TextArea10.qml
 

@@ -59,5 +59,7 @@
         <file>imports/ZMorph/CoreComponents/Text10.qml</file>
         <file>imports/ZMorph/CoreComponents/TextField11.qml</file>
         <file>imports/ZMorph/CoreComponents/ComboBox11.qml</file>
+        <file>imports/ZMorph/CoreComponents/TabButton11.qml</file>
+        <file>imports/ZMorph/CoreComponents/CheckBox11.qml</file>
     </qresource>
 </RCC>
