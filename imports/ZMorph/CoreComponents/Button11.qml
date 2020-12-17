@@ -92,6 +92,7 @@ T.Button {
         color: control.textColor
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
+        wrapMode: Text.Wrap
         elide: Text.ElideRight
 
         Behavior on color {
