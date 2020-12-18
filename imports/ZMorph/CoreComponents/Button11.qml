@@ -41,6 +41,10 @@ import QtQuick.Templates 2.12 as T
 
 import ZMorph.UiElements 1.0
 
+import QtQuick.Controls.Material 2.12
+import QtQuick.Controls.Material.impl 2.12
+import QtGraphicalEffects 1.12
+
 T.Button {
     id: control
 
@@ -61,9 +65,9 @@ T.Button {
         State {
             name: "normal"
             when: !control.down
-            PropertyChanges {
-                target: buttonBackground
-            }
+//            PropertyChanges {
+//                target: buttonBackground
+//            }
 
             PropertyChanges {
                 target: textItem
@@ -72,14 +76,14 @@ T.Button {
         State {
             name: "down"
             when: control.down
-            PropertyChanges {
-                target: buttonBackground
-                color: Qt.darker(control.color)
-            }
+//            PropertyChanges {
+//                target: buttonBackground
+//                color: Qt.darker(control.color)
+//            }
 
             PropertyChanges {
                 target: textItem
-                color: Qt.darker(control.textColor)
+                color: Style.colorForeground
             }
         }
     ]
@@ -97,7 +101,7 @@ T.Button {
 
         Behavior on color {
             ColorAnimation {
-                duration: 70
+                duration: 170
             }
         }
     }
@@ -109,10 +113,39 @@ T.Button {
         opacity: enabled ? 1.0 : 0.3
         color: control.color
 
-        Behavior on color {
-            ColorAnimation {
-                duration: 70
-            }
+//        Behavior on color {
+//            ColorAnimation {
+//                duration: 70
+//            }
+//        }
+
+//        Ripple {
+//            id: ripple
+//            anchors.horizontalCenter: parent.horizontalCenter
+//            clipRadius: 0
+//            anchors.fill: parent
+//            pressed: control.pressed
+//            active: control.down || control.visualFocus || control.hovered
+//            color: Qt.rgba(0, 0, 0, 0.5)
+//            layer.enabled: true
+//            layer.effect: OpacityMask {
+//                maskSource: Rectangle
+//                {
+//                    width: ripple.width
+//                    height: ripple.height
+//                    radius: 0
+//                }
+//            }
+//        }
+
+        Ripple {
+            clipRadius: 1
+            width: parent.width
+            height: parent.height
+            pressed: control.pressed
+            anchor: control
+            active: control.down || control.visualFocus || control.hovered
+            color: Qt.rgba(0, 0, 0, 0.5)
         }
     }
 }
