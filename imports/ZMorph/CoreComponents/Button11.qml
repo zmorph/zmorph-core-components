@@ -53,36 +53,9 @@ T.Button {
     horizontalPadding: padding + 2
     spacing: 6
 
-    property color color: Style.colorAccent
-    property color textColor: Style.colorBackground
+    property color color: Style.colorPrimary
+    property color textColor: Style.colorForeground
     property alias fontPixelSize: textItem.font.pixelSize
-
-    states: [
-        State {
-            name: "normal"
-            when: !control.down
-            PropertyChanges {
-                target: buttonBackground
-            }
-
-            PropertyChanges {
-                target: textItem
-            }
-        },
-        State {
-            name: "down"
-            when: control.down
-            PropertyChanges {
-                target: buttonBackground
-                color: Qt.darker(control.color)
-            }
-
-            PropertyChanges {
-                target: textItem
-                color: Qt.darker(control.textColor)
-            }
-        }
-    ]
 
     contentItem: Text {
         id: textItem
@@ -100,6 +73,26 @@ T.Button {
                 duration: 70
             }
         }
+
+//        states: [
+//            State {
+//                name: "normal"
+//                when: !control.down
+
+//                PropertyChanges {
+//                    target: textItem
+//                }
+//            },
+//            State {
+//                name: "down"
+//                when: control.down
+
+//                PropertyChanges {
+//                    target: textItem
+//                    color: Qt.darker(control.textColor)
+//                }
+//            }
+//        ]
     }
 
     background: Rectangle {
@@ -108,11 +101,31 @@ T.Button {
         implicitHeight: 40
         opacity: enabled ? 1.0 : 0.3
         color: control.color
+        border.width: 1
+        border.color: control.color
 
-        Behavior on color {
+        Behavior on border.color {
             ColorAnimation {
                 duration: 70
             }
         }
+
+        states: [
+            State {
+                name: "normal"
+                when: !control.down
+                PropertyChanges {
+                    target: buttonBackground
+                }
+            },
+            State {
+                name: "down"
+                when: control.down
+                PropertyChanges {
+                    target: buttonBackground
+                    border.color: Style.colorAccent
+                }
+            }
+        ]
     }
 }
