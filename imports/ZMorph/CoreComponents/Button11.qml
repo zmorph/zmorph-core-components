@@ -53,8 +53,8 @@ T.Button {
     horizontalPadding: padding + 2
     spacing: 6
 
-    property color color: Style.colorPrimary
-    property color textColor: Style.colorForeground
+    property color color: Style.c_secondaryGray
+    property color textColor: Style.c_fontGray
     property alias fontPixelSize: textItem.font.pixelSize
 
     contentItem: Text {
@@ -123,7 +123,7 @@ T.Button {
                 when: control.down
                 PropertyChanges {
                     target: buttonBackground
-                    border.color: Style.colorAccent
+                    border.color: Style.c_accent
                 }
             }
         ]

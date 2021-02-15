@@ -54,10 +54,10 @@ T.ComboBox {
     leftPadding: padding + (!control.mirrored || !indicator || !indicator.visible ? 0 : indicator.width + spacing)
     rightPadding: padding + (control.mirrored || !indicator || !indicator.visible ? 0 : indicator.width + spacing)
 
-    property color color: Style.colorPrimary
-    property color textColor: Style.colorForeground
+    property color color: Style.c_secondaryGray
+    property color textColor: Style.c_fontGray
     property var textLeftMargin: 12
-    property color dropDownListColor: Style.colorPrimary
+    property color dropDownListColor: Style.c_secondaryGray
 
     delegate: ItemDelegate {
         width: parent.width

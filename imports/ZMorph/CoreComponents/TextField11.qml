@@ -53,13 +53,13 @@ T.TextField {
     padding: 6
     leftPadding: padding + 4
 
-    property color placeholderColor: Style.colorForeground
-    property color backgroundColor: Style.colorPrimary
-    property color backgroundBorderColor: Style.colorAccent
+    property color placeholderColor: Style.c_fontGray
+    property color backgroundColor: Style.c_secondaryGray
+    property color backgroundBorderColor: Style.c_accent
 
     property bool isGcodeInput: false
 
-    color: Style.colorForeground
+    color: Style.c_fontGray
     selectionColor: control.palette.highlight
     selectedTextColor: control.palette.highlightedText
     placeholderTextColor: Color.transparent(control.color, 0.5)

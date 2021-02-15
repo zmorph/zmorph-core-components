@@ -53,7 +53,7 @@ T.CheckBox {
     padding: 6
     spacing: 6
 
-    property color textColor: Style.colorForeground
+    property color textColor: Style.c_fontGray
 
     // keep in sync with CheckDelegate.qml (shared CheckIndicator.qml was removed for performance reasons)
     indicator: Rectangle {

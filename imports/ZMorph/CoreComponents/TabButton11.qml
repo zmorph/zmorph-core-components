@@ -56,7 +56,7 @@ T.TabButton {
     icon.height: 24
     icon.color: checked ? control.palette.windowText : control.palette.brightText
 
-    property color textColor: Style.colorForeground
+    property color textColor: Style.c_fontGray
 
     contentItem: IconLabel {
         spacing: control.spacing
