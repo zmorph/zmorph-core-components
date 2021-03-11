@@ -58,6 +58,7 @@ SwipeView                       1.0 SwipeView10.qml
 Switch                          1.0 Switch10.qml
 SwitchDelegate                  1.0 SwitchDelegate10.qml
 TabBar                          1.0 TabBar10.qml
+TabBar                          1.1 TabBar11.qml
 
 TabButton                       1.0 TabButton10.qml
 TabButton                       1.1 TabButton11.qml

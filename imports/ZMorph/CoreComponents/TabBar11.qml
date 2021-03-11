@@ -35,44 +35,39 @@
 ****************************************************************************/
 
 import QtQuick 2.12
-import QtQuick.Controls 2.12
-import QtQuick.Controls.impl 2.12
 import QtQuick.Templates 2.12 as T
 
 import ZMorph.UiElements 1.0
 
-T.TabButton {
+T.TabBar {
     id: control
 
     implicitWidth: Math.max(implicitBackgroundWidth + leftInset + rightInset,
-                            implicitContentWidth + leftPadding + rightPadding)
+                            contentWidth + leftPadding + rightPadding)
     implicitHeight: Math.max(implicitBackgroundHeight + topInset + bottomInset,
-                             implicitContentHeight + topPadding + bottomPadding)
+                             contentHeight + topPadding + bottomPadding)
 
-    padding: 6
-    spacing: 6
-
-    icon.width: 24
-    icon.height: 24
-    icon.color: checked ? control.palette.windowText : control.palette.brightText
+    spacing: 1
 
     property color color: Style.c_secondaryGray
-    property color textColor: Style.c_fontGray
 
-    contentItem: IconLabel {
+    contentItem: ListView {
+        model: control.contentModel
+        currentIndex: control.currentIndex
+
         spacing: control.spacing
-        mirrored: control.mirrored
-        display: control.display
+        orientation: ListView.Horizontal
+        boundsBehavior: Flickable.StopAtBounds
+        flickableDirection: Flickable.AutoFlickIfNeeded
+        snapMode: ListView.SnapToItem
 
-        icon: control.icon
-        text: control.text
-        font: control.font
-        color: control.textColor
+        highlightMoveDuration: 0
+        highlightRangeMode: ListView.ApplyRange
+        preferredHighlightBegin: 40
+        preferredHighlightEnd: width - 40
     }
 
     background: Rectangle {
-        implicitHeight: 40
-        color: Color.blend(control.checked ? control.palette.window : control.palette.dark,
-                                             control.palette.mid, control.down ? 0.5 : 0.0)
+        color: control.color
     }
 }
