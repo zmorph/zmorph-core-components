@@ -113,14 +113,14 @@ T.Button {
         states: [
             State {
                 name: "normal"
-                when: !control.down
+                when: !control.down && !control.checked
                 PropertyChanges {
                     target: buttonBackground
                 }
             },
             State {
                 name: "down"
-                when: control.down
+                when: control.down || control.checked
                 PropertyChanges {
                     target: buttonBackground
                     border.color: Style.c_accent
