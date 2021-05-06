@@ -54,8 +54,14 @@ T.Button {
     spacing: 6
 
     property color color: Style.c_secondaryGray
+    property color colorPressed: Style.c_secondaryGray
     property color textColor: Style.c_fontGray
+    property color textColorPressed: Style.c_accent
+    property color borderColor: Style.c_secondaryGray
+    property color borderColorPressed: Style.c_accent
     property alias fontPixelSize: textItem.font.pixelSize
+
+    property int animationDuration: 70
 
     contentItem: Text {
         id: textItem
@@ -70,29 +76,29 @@ T.Button {
 
         Behavior on color {
             ColorAnimation {
-                duration: 70
+                duration: control.animationDuration
             }
         }
 
-//        states: [
-//            State {
-//                name: "normal"
-//                when: !control.down
+        states: [
+            State {
+                name: "normal"
+                when: !control.down
 
-//                PropertyChanges {
-//                    target: textItem
-//                }
-//            },
-//            State {
-//                name: "down"
-//                when: control.down
+                PropertyChanges {
+                    target: textItem
+                }
+            },
+            State {
+                name: "down"
+                when: control.down
 
-//                PropertyChanges {
-//                    target: textItem
-//                    color: Qt.darker(control.textColor)
-//                }
-//            }
-//        ]
+                PropertyChanges {
+                    target: textItem
+                    color: control.textColorPressed
+                }
+            }
+        ]
     }
 
     background: Rectangle {
@@ -102,11 +108,17 @@ T.Button {
         opacity: enabled ? 1.0 : 0.3
         color: control.color
         border.width: 1
-        border.color: control.color
+        border.color: control.borderColor
 
         Behavior on border.color {
             ColorAnimation {
-                duration: 70
+                duration: control.animationDuration
+            }
+        }
+
+        Behavior on color {
+            ColorAnimation {
+                duration: control.animationDuration
             }
         }
 
@@ -116,6 +128,8 @@ T.Button {
                 when: !control.down && !control.checked
                 PropertyChanges {
                     target: buttonBackground
+                    border.color: control.borderColor
+                    color: control.color
                 }
             },
             State {
@@ -123,7 +137,8 @@ T.Button {
                 when: control.down || control.checked
                 PropertyChanges {
                     target: buttonBackground
-                    border.color: Style.c_accent
+                    border.color: control.borderColorPressed
+                    color: control.colorPressed
                 }
             }
         ]
