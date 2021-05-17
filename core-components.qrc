@@ -62,5 +62,6 @@
         <file>imports/ZMorph/CoreComponents/TabButton11.qml</file>
         <file>imports/ZMorph/CoreComponents/CheckBox11.qml</file>
         <file>imports/ZMorph/CoreComponents/TabBar11.qml</file>
+        <file>imports/ZMorph/CoreComponents/SpinBox11.qml</file>
     </qresource>
 </RCC>
