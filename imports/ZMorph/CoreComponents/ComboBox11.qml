@@ -57,13 +57,23 @@ T.ComboBox {
     property color color: Style.c_secondaryGray
     property color textColor: Style.c_fontGray
     property var textLeftMargin: 12
+
     property color dropDownListColor: Style.c_secondaryGray
+    property color dropDownListItemPressedColor: Style.c_primaryGray
+    property color dropDownListItemHighlightedColor: Style.c_accent
+
+    property color dropDownListTextColor: Style.c_fontGray
+    property color dropDownListTextHighlightedColor: Style.c_secondaryGray
 
     delegate: ItemDelegate {
         width: parent.width
         text: control.textRole ? (Array.isArray(control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
-        palette.text: control.palette.text
-        palette.highlightedText: control.palette.highlightedText
+
+        palette.text: control.dropDownListTextColor
+        palette.highlightedText: control.dropDownListTextHighlightedColor
+        palette.light: control.dropDownListItemHighlightedColor
+        palette.midlight: control.dropDownListItemPressedColor
+
         font.weight: control.currentIndex === index ? Font.DemiBold : Font.Normal
         highlighted: control.highlightedIndex === index
         hoverEnabled: control.hoverEnabled
