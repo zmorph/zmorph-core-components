@@ -88,15 +88,32 @@ T.ComboBox {
         opacity: enabled ? 1 : 0.3
     }
 
-    contentItem: Text {
-        leftPadding: control.textLeftMargin
-        rightPadding: control.indicator.width + control.spacing
+    contentItem: T.TextField {
+        leftPadding: !control.mirrored ? 12 : control.editable && activeFocus ? 3 : 1
+        rightPadding: control.mirrored ? 12 : control.editable && activeFocus ? 3 : 1
+        topPadding: 6 - control.padding
+        bottomPadding: 6 - control.padding
 
-        text: control.displayText
+        text: control.editable ? control.editText : control.displayText
+
+        enabled: control.editable
+        autoScroll: control.editable
+        readOnly: control.down
+        inputMethodHints: control.inputMethodHints
+        validator: control.validator
+
         font: control.font
-        color: control.pressed ? Qt.darker(control.textColor) : control.textColor
+        color: control.editable ? control.palette.text : control.textColor
+        selectionColor: control.palette.highlight
+        selectedTextColor: control.palette.highlightedText
         verticalAlignment: Text.AlignVCenter
-        elide: Text.ElideRight
+
+        background: Rectangle {
+            visible: control.enabled && control.editable && !control.flat
+            border.width: parent && parent.activeFocus ? 2 : 1
+            border.color: parent && parent.activeFocus ? control.palette.highlight : control.palette.button
+            color: control.palette.base
+        }
     }
 
     background: Rectangle {
