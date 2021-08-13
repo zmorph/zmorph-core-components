@@ -54,6 +54,7 @@ Slider                          1.0 Slider10.qml
 
 SpinBox                         1.0 SpinBox10.qml
 SpinBox                         1.1 SpinBox11.qml
+SpinBox                         1.2 SpinBox12.qml
 
 StackView                       1.0 StackView10.qml
 SwipeDelegate                   1.0 SwipeDelegate10.qml
