@@ -67,6 +67,8 @@ T.SpinBox {
     property color textBackgroundColor: Style.c_inputGray
     property color textBackgroundDisabledColor: Qt.darker(textBackgroundColor)
     property int textBackgroundActiveFocusBorderWidth: 0
+    property bool interactive: true
+    enabled: interactive
 
     validator: IntValidator {
         locale: control.locale.name
@@ -110,7 +112,7 @@ T.SpinBox {
         border.color: up.pressed ? control.buttonActiveBorderColor : control.buttonBackgroundColor
 
         property color signColor: enabled ? (up.pressed ? control.buttonActiveIndicatorColor : control.buttonIndicatorColor) : control.buttonDisabledIndicatorColor
-        visible: enabled
+        visible: control.interactive
 
         Rectangle {
             x: (parent.width - width) / 2
@@ -137,7 +139,7 @@ T.SpinBox {
         border.color: down.pressed ? control.buttonActiveBorderColor : control.buttonBackgroundColor
 
         property color signColor: enabled ? (down.pressed ? control.buttonActiveIndicatorColor : control.buttonIndicatorColor) : control.buttonDisabledIndicatorColor
-        visible: enabled
+        visible: control.interactive
 
         Rectangle {
             x: (parent.width - width) / 2
