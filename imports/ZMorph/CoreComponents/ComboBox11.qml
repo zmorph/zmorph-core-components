@@ -80,11 +80,14 @@ T.ComboBox {
     }
 
     indicator: ColorImage {
-        x: control.mirrored ? control.padding : control.width - width - control.padding
+        x: control.mirrored ? control.padding : control.width - 2 * width - control.padding
         y: control.topPadding + (control.availableHeight - height) / 2
-        color: control.palette.dark
+//        color: control.palette.dark
+        color: Qt.darker(Style.c_fontGray)
         defaultColor: "#353637"
-        source: "qrc:/qt-project.org/imports/QtQuick/Controls.2/images/double-arrow.png"
+        source: "qrc:/icons/down-chevron.svg"
+        sourceSize.width: Style.chevronSize
+//        source: "qrc:/qt-project.org/imports/QtQuick/Controls.2/images/double-arrow.png"
         opacity: enabled ? 1 : 0.3
     }
 
